@@ -12,7 +12,6 @@ public class Main {
         int year = 2021;
         checkYear(year);
     }
-
     public static void checkYear(int yearIn) {
         if (yearIn % 4 == 0) {
             if (yearIn % 100 != 0) {
