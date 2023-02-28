@@ -9,17 +9,16 @@ public class Main {
 
     public static void task1() {
         System.out.println("Задача 1");
-        int year = 2021;
+        int year = 2121;
         checkYear(year);
     }
 
     public static void checkYear(int yearIn) {
-        if (yearIn % 4 == 0) {
-            if (yearIn % 100 != 0) {
-                System.out.println(yearIn + " год является високосным");
-            }
-            ;
-        } else System.out.println(yearIn + " год не является високосным");
+        if ((yearIn % 4) == 0 || yearIn % 400 == 0) {
+            if (yearIn % 100 == 0) {
+                System.out.println(yearIn + " год не является високосным");
+            } else System.out.println(yearIn + " год является високосным");
+        }else System.out.println(yearIn + " год не является високосным");
     }
 
     public static void task2() {
@@ -49,17 +48,18 @@ public class Main {
     public static void task3() {
         System.out.println("Задача 3");
         int deliveryDistance = 95;
-        System.out.println(deliveryPeriod(deliveryDistance));
+        System.out.println("Потребуется дней: " + deliveryPeriod(deliveryDistance));
     }
-    public static String deliveryPeriod(int distance) {
+
+    public static int deliveryPeriod(int distance) {
         int deliveryDay = 1;
         if (distance <= 20)
-            return ("Потребуется дней: " + distance);
+            return (distance);
         else if (distance > 20 && distance <= 60)
-            return ("Потребуется дней: " + deliveryDay * 2);
+            return (deliveryDay * 2);
         else if (distance > 60 && distance <= 100)
-            return ("Потребуется дней: " + deliveryDay * 3);
+            return (deliveryDay * 3);
         else
-            return ("Доставки нет");
+            return (0);
     }
 }
